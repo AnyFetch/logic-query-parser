@@ -1,0 +1,29 @@
+{
+  "name": "logic-query-parser",
+  "version": "0.0.0",
+  "description": "A parser for logic search string",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha -R spec -t 60000 test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnyFetch/logic-query-parser.git"
+  },
+  "keywords": [
+    "logic",
+    "query",
+    "parser",
+    "search"
+  ],
+  "devDependencies": {
+    "mocha": "1.20.x",
+    "should": "4.0.x"
+  },
+  "author": "Quentin Buathier <quentin.buathier@epitech.eu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AnyFetch/logic-query-parser/issues"
+  },
+  "homepage": "https://github.com/AnyFetch/logic-query-parser"
+}
