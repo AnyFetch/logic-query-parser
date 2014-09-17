@@ -1,0 +1,22 @@
+# OS Artifacts
+*.DS_Store
+.directory
+
+# Vagrant Artifacts
+.vagrant/*
+Berksfile.lock
+
+# NPM Artifacts
+node_modules/*
+npm-debug.log
+libpeerconnection.log
+coverage/*
+
+# IDE Artifacts
+.idea/*
+*.iml
+*.sublime-*
+nohup.out
+
+# Jekyll artifacts
+_site/*
