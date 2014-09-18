@@ -7,7 +7,7 @@ var andLexeme = {
   modifiers: 'i',
   lexer: lexerHelper.generateCutLexer('and', 3),
   syntaxer: syntaxerHelper.andSyntaxer,
-  priority: 5,
+  priority: 4,
   checker: ['endBlock', null]
 };
 
@@ -16,6 +16,8 @@ var orLexeme = {
   escaped: true,
   modifiers: 'i',
   lexer: lexerHelper.generateCutLexer('or', 3),
+  syntaxer: syntaxerHelper.orSyntaxer,
+  priority: 5,
   checker: ['endBlock', null]
 };
 
