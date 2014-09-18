@@ -1,10 +1,13 @@
 var lexerHelper = require('../lib/helpers/lexer.js');
+var syntaxerHelper = require('../lib/helpers/syntaxer.js');
 
 var andLexeme = {
   regexp: 'and[^\\s]?',
   escaped: true,
   modifiers: 'i',
   lexer: lexerHelper.generateCutLexer('and', 3),
+  syntaxer: syntaxerHelper.andSyntaxer,
+  priority: 5,
   checker: ['endBlock', null]
 };
 
@@ -31,7 +34,9 @@ var endBlockLexeme = {
 
 var stringLexeme = {
   regexp: '"?.*',
-  lexer: lexerHelper.stringLexer([startBlockLexeme, endBlockLexeme])
+  lexer: lexerHelper.stringLexer([startBlockLexeme, endBlockLexeme]),
+  syntaxer: syntaxerHelper.stringSyntaxer,
+  priority: 0
 };
 
 module.exports = {
