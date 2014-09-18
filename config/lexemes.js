@@ -25,6 +25,8 @@ var startBlockLexeme = {
   regexp: '\\(',
   escaped: true,
   lexer: lexerHelper.generateCutLexer('startBlock', 1),
+  syntaxer: syntaxerHelper.blockSyntaxer,
+  priority: 0,
   checker: ['endBlock', null]
 };
 
