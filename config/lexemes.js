@@ -1,5 +1,6 @@
 var lexerHelper = require('../lib/helpers/lexer.js');
 var syntaxerHelper = require('../lib/helpers/syntaxer.js');
+var postHelper = require('../lib/helpers/post.js');
 
 var andLexeme = {
   regexp: 'and[^\\s]?',
@@ -27,6 +28,7 @@ var startBlockLexeme = {
   lexer: lexerHelper.generateCutLexer('startBlock', 1),
   syntaxer: syntaxerHelper.blockSyntaxer,
   priority: 0,
+  postFunction: postHelper.blockPostTreatment,
   checker: ['endBlock', null]
 };
 
