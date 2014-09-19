@@ -6,6 +6,8 @@ module.exports = [
 	 */
 	{
 		string: 'welcome AND bye',
+
+		// TREE
 		tree: {
 			lexeme: { 
 				type: 'and'
