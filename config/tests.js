@@ -801,12 +801,35 @@ module.exports = [
    *    TEST N°15
    */
   {
+    string: 'hello\\ \\OR\\ there',
+
+    // TREE
+    tree: {
+      lexeme: {
+        type: "string",
+        value: "hello OR there"
+      },
+      left: null,
+      right: null
+    },
+
+    // QUERY
+    query: {
+      type: "string",
+      value: "hello OR there"
+    }
+  },
+
+  /*
+   *    TEST N°16
+   */
+  {
     string: '("hello',
     err: "Can't reach end of quoted string"
   },
 
   /*
-   *    TEST N°16
+   *    TEST N°17
    */
   {
     string: ')" bye" (',
