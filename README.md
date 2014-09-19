@@ -12,18 +12,17 @@ Check everything is working with `npm test`.
 
 # How to use it
 
-This lib provider a function parse whick take an object of options (optionnal) and a string as paramater, it returns a binary tree.
-As binary trees are not simple this lib provide an util function which convert binaryTree to a better form of query
+This lib provides a function parser whick take an optional options object and a string parameter, then returning a binary tree.
+As binary trees are not easy to use, this lib also provides an utility function which convert said binaryTree to a more usable query form
 
 Avalaible options are for now :
-* spaces : A string / array which contains all of spaces characters. Default : " \n\t"
-* defaultOperator : A default operator uses between two strings. Default : 'and'
+* `spaces` : String / array containing all spaces characters. Default : " \n\t"
+* `defaultOperator` : Default operator to use between two strings. Default : 'and'
 
-Avalaible operators for now : AND, OR, parentheses, double quote
+Available operators for now : AND, OR, parens, double quote
 
 # Example
 
-So, here is an example :
 
 ```js
 var parser = require('logic-query-parser');
@@ -56,7 +55,7 @@ The binaryTree for this example will be :
 }
 ```
 
-Another example which is more complexe :
+Another example, slightly more complex:
 
 ```js
 var parser = require('logic-query-parser');
@@ -115,7 +114,7 @@ And the binary tree :
 }
 ```
 
-So, here is an example of the util function with the second example query :
+As said before, trees are useful but not easy to use. You can also get the "query form":
 
 ```js
 var parser = require('logic-query-parser');
@@ -124,7 +123,7 @@ var binaryTree = parser.parse('(welcome OR bye) AND (hello OR ahoy)');
 var query = parser.utils.binaryTreeToQueryJson(binaryTree);
 ```
 
-Now query is like that :
+Returning:
 ```js
 {
   type: "and",
@@ -159,9 +158,7 @@ Now query is like that :
 }
 ```
 
-It's more simple and small than the binary tree !
 
-
-For others examples you can watch the file `config/tests.js`.
+Take a look at `config/tests.js` for more samples
 
 Support: `support@anyfetch.com`.
