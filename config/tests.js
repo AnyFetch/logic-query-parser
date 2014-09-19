@@ -821,7 +821,30 @@ module.exports = [
   },
 
   /*
-   *    TEST N°16
+   *    TEST N°15
+   */
+  {
+    string: '"(welcome hello)"',
+
+    // TREE
+    tree: {
+      lexeme: {
+        type: "string",
+        value: "(welcome hello)"
+      },
+      left: null,
+      right: null
+    },
+
+    // QUERY
+    query: {
+      type: "string",
+      value: "(welcome hello)"
+    }
+  },
+
+  /*
+   *    TEST N°17
    */
   {
     string: '("hello',
@@ -829,7 +852,7 @@ module.exports = [
   },
 
   /*
-   *    TEST N°17
+   *    TEST N°18
    */
   {
     string: ')" bye" (',
