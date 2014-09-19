@@ -694,12 +694,119 @@ module.exports = [
    *    TEST N°13
    */
   {
+    string: 'hello (welcome)',
+
+    // TREE
+    tree: {
+      lexeme: {
+        type: "and"
+      },
+      left: {
+        lexeme: {
+          type: "string",
+          value: "hello"
+        },
+        left: null,
+        right: null
+      },
+      right: {
+        lexeme: {
+          type: "string",
+          value: "welcome"
+        },
+        left: null,
+        right: null
+      }
+    },
+
+    // QUERY
+    query: {
+      type: "and",
+      values: [
+        {
+          type: "string",
+          value: "hello"
+        },
+        {
+          type: "string",
+          value: "welcome"
+        }
+      ]
+    }
+  },
+
+  /*
+   *    TEST N°14
+   */
+  {
+    string: '\\(hello bye\\) welcome',
+
+    // TREE
+    tree: {
+      lexeme: {
+        type: "and"
+      },
+      left: {
+        lexeme: {
+          type: "string",
+          value: "(hello"
+        },
+        left: null,
+        right: null
+      },
+      right: {
+        lexeme: {
+          type: "and"
+        },
+        left: {
+          lexeme: {
+            type: "string",
+            value: "bye)"
+          },
+          left: null,
+          right: null
+        },
+        right: {
+          lexeme: {
+            type: "string",
+            value: "welcome"
+          },
+          left: null,
+          right: null
+        }
+      }
+    },
+
+    // QUERY
+    query: {
+      type: "and",
+      values: [
+        {
+          type: "string",
+          value: "(hello"
+        },
+        {
+          type: "string",
+          value: "bye)"
+        },
+        {
+          type: "string",
+          value: "welcome"
+        }
+      ]
+    }
+  },
+
+  /*
+   *    TEST N°15
+   */
+  {
     string: '("hello',
     err: "Can't reach end of quoted string"
   },
 
   /*
-   *    TEST N°14
+   *    TEST N°16
    */
   {
     string: ')" bye" (',
