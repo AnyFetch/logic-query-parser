@@ -857,5 +857,21 @@ module.exports = [
   {
     string: ')" bye" (',
     err: 'end of string just after startBlock'
+  },
+
+  /*
+   *    TEST N°19
+   */
+  {
+    string: 'test"',
+    err: 'Can\'t reach end of quoted string'
+  },
+
+  /*
+   *    TEST N°20
+   */
+  {
+    string: 'bye)',
+    err: 'Unexpected token endBlock'
   }
 ];
