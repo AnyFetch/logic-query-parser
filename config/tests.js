@@ -9,7 +9,7 @@ module.exports = [
 
     // TREE
     tree: {
-      lexeme: { 
+      lexeme: {
         type: 'and'
       },
       left: {
@@ -54,7 +54,7 @@ module.exports = [
 
     // TREE
     tree: {
-      lexeme: { 
+      lexeme: {
         type: 'or'
       },
       left: {
@@ -873,5 +873,18 @@ module.exports = [
   {
     string: 'bye)',
     err: 'Unexpected token endBlock'
+  },
+
+  /*
+   *    TEST N°21
+   */
+  {
+    string: '',
+
+    // TREE
+    tree: {},
+
+    // QUERY
+    query: {}
   }
 ];
