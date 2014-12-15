@@ -22,6 +22,10 @@ describe('Tests binaryTree', function() {
           tree.should.eql(test.tree);
         }
 
+        if(test.err) {
+          return done(new Error("Should have failed"));
+        }
+
         done();
       }
       catch(e) {
@@ -30,7 +34,7 @@ describe('Tests binaryTree', function() {
         }
 
         e.toString().should.containDeep(test.err);
-        done();
+        return done();
       }
     });
   });
@@ -50,6 +54,10 @@ describe('Tests queryJson', function() {
 
         if(test.query) {
           query.should.eql(test.query);
+        }
+
+        if(test.err) {
+          return done(new Error("Should have failed"));
         }
 
         done();
