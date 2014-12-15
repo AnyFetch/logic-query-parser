@@ -3,7 +3,7 @@ var syntaxerHelper = require('../lib/helpers/syntaxer.js');
 var postHelper = require('../lib/helpers/post.js');
 
 var andLexeme = {
-  regexp: 'and[^\\s]?',
+  regexp: 'and(\\s|\\(|\\)|"|$)',
   escaped: true,
   modifiers: 'i',
   lexer: lexerHelper.generateCutLexer('and', 3),
@@ -13,10 +13,10 @@ var andLexeme = {
 };
 
 var orLexeme = {
-  regexp: 'or[^\\s]?',
+  regexp: 'or(\\s|\\(|\\)|"|$)',
   escaped: true,
   modifiers: 'i',
-  lexer: lexerHelper.generateCutLexer('or', 3),
+  lexer: lexerHelper.generateCutLexer('or', 2),
   syntaxer: syntaxerHelper.orSyntaxer,
   priority: 5,
   checker: ['endBlock', null]
@@ -34,7 +34,7 @@ var startBlockLexeme = {
 
 var endBlockLexeme = {
   regexp: '\\)',
-  escaped: true, 
+  escaped: true,
   lexer: lexerHelper.generateCutLexer('endBlock', 1),
 };
 
