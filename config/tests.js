@@ -886,5 +886,67 @@ module.exports = [
 
     // QUERY
     query: {}
-  }
+  },
+
+  /*
+   *    TEST N°22
+   */
+  {
+    string: 'and test',
+    err: 'Nothing before and block'
+  },
+
+  /*
+   *    TEST N°23
+   */
+  {
+    string: 'or test',
+    err: 'Nothing before or block'
+  },
+
+  /*
+   *    TEST N°24
+   */
+  {
+    string: 'android',
+
+    // TREE
+    tree: {
+      lexeme: {
+        type: "string",
+        value: "android"
+      },
+      left: null,
+      right: null
+    },
+
+    // QUERY
+    query: {
+      type: "string",
+      value: "android"
+    }
+  },
+
+  /*
+   *    TEST N°25
+   */
+  {
+    string: 'orroid',
+
+    // TREE
+    tree: {
+      lexeme: {
+        type: "string",
+        value: "orroid"
+      },
+      left: null,
+      right: null
+    },
+
+    // QUERY
+    query: {
+      type: "string",
+      value: "orroid"
+    }
+  },
 ];
