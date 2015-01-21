@@ -1,6 +1,4 @@
 # Logic Query Parser
-> Visit http://anyfetch.com for details about AnyFetch.
-
 Generate binary tree with a logic query string as input
 
 # How to install?
