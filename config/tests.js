@@ -949,4 +949,12 @@ module.exports = [
       value: "orroid"
     }
   },
+
+  /*
+   *    TEST N°26
+   */
+  {
+    string: '()',
+    err: 'Empty block'
+  },
 ];
