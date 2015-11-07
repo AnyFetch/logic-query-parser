@@ -22,6 +22,16 @@ var orLexeme = {
   checker: ['endBlock', null]
 };
 
+var notLexeme = {
+  regexp: 'not(\\s|\\(|\\)|"|$)',
+  escaped: true,
+  modifiers: 'i',
+  lexer: lexerHelper.generateCutLexer('not', 3),
+  syntaxer: syntaxerHelper.notSyntaxer,
+  priority: 1,
+  checker: ['endBlock', null]
+};
+
 var startBlockLexeme = {
   regexp: '\\(',
   escaped: true,
@@ -48,6 +58,7 @@ var stringLexeme = {
 module.exports = {
   and: andLexeme,
   or: orLexeme,
+  not: notLexeme,
   startBlock: startBlockLexeme,
   endBlock: endBlockLexeme,
   string: stringLexeme

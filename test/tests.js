@@ -17,7 +17,7 @@ describe('Tests binaryTree', function() {
     func('should ' + (test.err ? 'fail' : 'work') + ' for test ' + count + ' : ' + test.string, function(done) {
       try {
         var tree = parser.parse(test.string);
-
+        
         if(test.tree) {
           tree.should.eql(test.tree);
         }
@@ -46,8 +46,7 @@ describe('Tests queryJson', function() {
   tests.forEach(function(test) {
     count += 1;
 
-    var func = test.only ? it.only : it;
-    func('should ' + (test.err ? 'fail' : 'work') + ' for test ' + count + ' : ' + test.string, function(done) {
+    it('should ' + (test.err ? 'fail' : 'work') + ' for test ' + count + ' : ' + test.string, function(done) {
       try {
         var tree = parser.parse(test.string);
         var query = utils.binaryTreeToQueryJson(tree);
