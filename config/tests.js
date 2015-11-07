@@ -957,4 +957,150 @@ module.exports = [
     string: '()',
     err: 'Empty block'
   },
+
+  /*
+   *    TEST N°27
+   */
+  {
+    string: 'NOT welcome',
+
+    // TREE
+    tree: {
+      lexeme: {
+        type: 'not'
+      },
+      left: {
+        lexeme: {
+          type: 'string',
+          value: 'welcome'
+        },
+        left: null,
+        right: null
+      },
+      right: null
+    },
+
+    // QUERY
+    query: {
+      type: "not",
+      values: [
+        {
+          type: "string",
+          value: "welcome"
+        }
+      ]
+    }
+  },
+
+  /*
+   *    TEST N°28
+   */
+  {
+    string: 'hello AND NOT welcome',
+
+    // TREE
+    tree: {
+      lexeme: {
+        type: 'and'
+      },
+      left: {
+        lexeme: {
+          type: 'string',
+          value: 'hello'
+        },
+        left: null,
+        right: null
+      },
+      right: {
+        lexeme: {
+          type: 'not'
+        },
+        left: {
+          lexeme: {
+            type: 'string',
+            value: 'welcome'
+          },
+          left: null,
+          right: null
+        },
+        right: null
+      }
+    },
+
+    // QUERY
+    query: {
+      type: "and",
+      values: [
+        {
+          type: "string",
+          value: "hello"
+        },
+        {
+          type: "not",
+          values: [
+            {
+              type: "string",
+              value: "welcome"
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+  /*
+   *    TEST N°29
+   */
+  {
+    string: 'hello OR NOT welcome',
+
+    // TREE
+    tree: {
+      lexeme: {
+        type: 'or'
+      },
+      left: {
+        lexeme: {
+          type: 'string',
+          value: 'hello'
+        },
+        left: null,
+        right: null
+      },
+      right: {
+        lexeme: {
+          type: 'not'
+        },
+        left: {
+          lexeme: {
+            type: 'string',
+            value: 'welcome'
+          },
+          left: null,
+          right: null
+        },
+        right: null
+      }
+    },
+
+    // QUERY
+    query: {
+      type: "or",
+      values: [
+        {
+          type: "string",
+          value: "hello"
+        },
+        {
+          type: "not",
+          values: [
+            {
+              type: "string",
+              value: "welcome"
+            }
+          ]
+        }
+      ]
+    }
+  },
 ];
